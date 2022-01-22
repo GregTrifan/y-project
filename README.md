@@ -6,9 +6,10 @@ This project was created as a submission for [Integrating UNS “Login With Unst
 **🚧WIP🚧**
 
 ## Contact info
-* **Discord:** GЯEG#2127
-* **email:** trifangaby71@gmail.com
-* **Gitcoin:** [theslayer-666](https://gitcoin.co/profile/theslayer-666)
+* **Discord -** GЯEG#2127
+* **email -** trifangaby71@gmail.com
+* **Gitcoin -** [theslayer-666](https://gitcoin.co/profile/theslayer-666)
+* **Twitter -** [@grigore_trifan](https://twitter.com/grigore_trifan)
 
 ### Tech Stack
 **🚧WIP🚧**
