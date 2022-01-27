@@ -9,6 +9,7 @@ import {
     Input,
     InputGroup,
     InputLeftElement,
+    Spacer,
     useColorModeValue,
     useDisclosure,
   } from "@chakra-ui/react";
@@ -56,10 +57,7 @@ export default function Layout({children}) {
               icon={<FiMenu />}
               size="sm"
             />
-            <InputGroup w="96" display={{ base: "none", md: "flex" }}>
-              <InputLeftElement color="gray.500" children={<FiSearch />} />
-              <Input placeholder="Search for articles..." />
-            </InputGroup>
+            <Spacer/>
   
             <Flex align="center">
               <Button>
