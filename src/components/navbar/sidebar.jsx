@@ -2,7 +2,6 @@ import {
     Box,
     Flex,
     Text,
-    useColorModeValue,
 } from "@chakra-ui/react";
 import {HiOutlinePhotograph} from "react-icons/hi"
 import { MdHome} from "react-icons/md";
@@ -19,8 +18,8 @@ const SidebarContent = (props) => (
       pb="10"
       overflowX="hidden"
       overflowY="auto"
-      bg={useColorModeValue("white", "gray.800")}
-      borderColor={useColorModeValue("inherit", "gray.700")}
+      bg="white"
+      borderColor="inherit"
       borderRightWidth="1px"
       w="60"
       {...props}
@@ -31,7 +30,7 @@ const SidebarContent = (props) => (
           fontSize="3xl"
           ml="2"
           fontFamily="quantico"
-          color={useColorModeValue("brand.500", "white")}
+          color="brand.500"
           fontWeight="semibold"
         >
           Y-Project

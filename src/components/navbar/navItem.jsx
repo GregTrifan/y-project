@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Flex,Icon,useColorModeValue} from "@chakra-ui/react"
+import {Box, Flex,Icon} from "@chakra-ui/react"
 
 const NavItem = (props) => {
     const { icon, children, ...rest } = props;
@@ -10,10 +10,10 @@ const NavItem = (props) => {
         pl="4"
         py="3"
         cursor="pointer"
-        color={useColorModeValue("inherit", "gray.400")}
+        color="inherit"
         _hover={{
-          bg: useColorModeValue("gray.50", "gray.900"),
-          color: useColorModeValue("brand.500", "gray.200"),
+          bg: "gray.50",
+          color: "brand.500",
         }}
         role="group"
         fontWeight="semibold"
@@ -32,7 +32,7 @@ const NavItem = (props) => {
             mx="2"
             color="brand.500"
             _groupHover={{
-              color: useColorModeValue("brand.600", "gray.300"),
+              color: "brand.600",
             }}
             as={icon}
           /></Box>

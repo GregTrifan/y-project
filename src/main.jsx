@@ -18,8 +18,8 @@ const colors = {
   }
 };
 const config = {
-  initialColorMode: "dark",
-  useSystemColorMode: false
+  useSystemColorMode: false,
+  initialColorMode: 'light',
 };
 
 const theme = extendTheme({ colors, config });
