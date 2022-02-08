@@ -15,19 +15,26 @@ import { FiMenu } from "react-icons/fi";
 import SidebarContent from "./navbar/sidebar";
 import React from "react";
 import UAuth from "@uauth/js";
+import { useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
 import UDLogo from "../images/ud.png";
+import { userState } from "../atoms/userAtom";
 export default function Layout({children}) {
     const sidebar = useDisclosure();
     const uauth = new UAuth({
       clientID:"OaafgSxIJJOXN35/KfeAkGYEeHFvq3r4ngO1E05tGVg=",
       clientSecret: "/EcHG6EihOPdoGVzCONtaQZyRyqaYIX3oANmgvMsoAA=",
       redirectUri: "http://localhost:3000/callback",
-      postLogoutRedirectUri: "http://localhost:3000/login",
     });
-    const handleAuth = (e) => {
-      uauth.login().catch((error) => {
+    const setUserState = useSetRecoilState(userState);
+    const user = useRecoilValue(userState);
+    const handleAuth = async () => {
+      try {
+        const authorization = uauth.loginWithPopup();
+        setUserState(await authorization);
+        console.log(authorization);
+      } catch (error) {
         console.error("login error:", error);
-      });
+      }
     }
     return (
       <Box
@@ -70,10 +77,13 @@ export default function Layout({children}) {
             <Spacer/>
   
             <Flex align="center">
-              <Button onClick={handleAuth} textColor="white" bg="#4c47f7" _hover={{bgColor:"#0025bb"}} _pressed={{bg:"#4f62ce"}}>
+              {!user&&<Button onClick={()=>handleAuth()} textColor="white" bg="#4c47f7" _hover={{bgColor:"#0025bb"}} _pressed={{bg:"#4f62ce"}}>
                 <Image src={UDLogo} height={6} />
                 <chakra.p mx="2">Login With Unstoppable</chakra.p>
-              </Button>
+              </Button>}
+              {user&&<Box rounded="md" p="2" fontWeight="semibold" fontSize="md" bgGradient='linear(to-r, gray.300, blue.200, green.300)'>
+                {user.idToken.sub}
+                </Box>}
             </Flex>
           </Flex>
           

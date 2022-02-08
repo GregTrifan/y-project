@@ -1,10 +1,12 @@
 import React from "react";
 import {Box, Flex,Icon} from "@chakra-ui/react"
+import { Link } from "react-router-dom";
 
 const NavItem = (props) => {
-    const { icon, children, ...rest } = props;
+    const { icon, children,to, ...rest } = props;
     return (
-      <Flex
+      <Link to={to??"/"}>
+        <Flex
         align="center"
         px="4"
         pl="4"
@@ -39,6 +41,7 @@ const NavItem = (props) => {
         )}
         {children}
       </Flex>
+      </Link>
     );
   };
 export default NavItem

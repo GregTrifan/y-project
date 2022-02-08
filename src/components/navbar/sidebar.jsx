@@ -4,7 +4,7 @@ import {
     Text,
 } from "@chakra-ui/react";
 import {HiOutlinePhotograph} from "react-icons/hi"
-import { MdHome} from "react-icons/md";
+import {MdMoney} from "react-icons/md";
 import "@fontsource/quantico";
 import NavItem from "./navItem";
 const SidebarContent = (props) => (
@@ -43,8 +43,8 @@ const SidebarContent = (props) => (
         color="gray.600"
         aria-label="Main Navigation"
       >
-        <NavItem icon={MdHome}>Feed</NavItem>
-        <NavItem icon={HiOutlinePhotograph}>Your Collection</NavItem>
+       <NavItem to="/dash" icon={MdMoney}>Your Assets</NavItem>
+        <NavItem to="/collection" icon={HiOutlinePhotograph}>Your Collection</NavItem>
       </Flex>
     </Box>
 );
