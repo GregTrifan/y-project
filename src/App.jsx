@@ -9,10 +9,17 @@ import Home from './pages/home'
 import Dashboard from './pages/dashboard';
 import { RecoilRoot } from 'recoil';
 import Collection from './pages/collection';
+import { ethers } from "ethers";
+import { NftProvider } from "use-nft"
+
+
+const provider = new ethers.providers.AlchemyProvider("homestead",import.meta.env.VITE_ALCHEMY_KEY)
+const fetcher = ["ethers", { ethers, provider: provider}]
 
 function App() {
   
   return (
+    <NftProvider fetcher={fetcher}>
     <RecoilRoot>
       <BrowserRouter>
     <Layout>
@@ -25,6 +32,7 @@ function App() {
       </Layout>
     </BrowserRouter>
     </RecoilRoot>
+    </NftProvider>
   )
 }
 

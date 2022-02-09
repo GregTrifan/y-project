@@ -10,12 +10,18 @@ import {
     Spacer,
     useDisclosure,
     chakra,
+    HStack,
+    MenuButton,
+    Menu,
+    MenuList,
+    MenuItem,
   } from "@chakra-ui/react";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu,FiLogOut,FiExternalLink } from "react-icons/fi";
+import {MdOutlineAccountBalanceWallet} from "react-icons/md";
 import SidebarContent from "./navbar/sidebar";
 import React from "react";
 import UAuth from "@uauth/js";
-import { useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import UDLogo from "../images/ud.png";
 import { userState } from "../atoms/userAtom";
 export default function Layout({children}) {
@@ -81,9 +87,20 @@ export default function Layout({children}) {
                 <Image src={UDLogo} height={6} />
                 <chakra.p mx="2">Login With Unstoppable</chakra.p>
               </Button>}
-              {user&&<Box rounded="md" p="2" fontWeight="semibold" fontSize="md" bgGradient='linear(to-r, gray.300, blue.200, green.300)'>
-                {user.idToken.sub}
-                </Box>}
+              {user&&<Menu>
+                <MenuButton rounded="md" p="2" fontWeight="semibold" fontSize="md" bgGradient='linear(to-r, gray.300, blue.200, green.300)'>
+                <HStack>
+                <MdOutlineAccountBalanceWallet/> 
+                <chakra.span>{user.idToken.sub}</chakra.span>
+                </HStack>
+                </MenuButton>
+                <MenuList>
+                  <MenuItem icon={<FiExternalLink/>} onClick={()=>{
+                    window.open(`https://etherscan.io/address/${user.idToken.wallet_address}`, '_blank');
+                  }}>View on Etherscan</MenuItem>
+                  <MenuItem icon={<FiLogOut/>} onClick={()=>setUserState()}>Logout</MenuItem>
+                </MenuList>
+                </Menu>}
             </Flex>
           </Flex>
           

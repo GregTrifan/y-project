@@ -16,7 +16,17 @@ This project was created as a submission for [Integrating UNS “Login With Unst
 * **Twitter -** [@grigore_trifan](https://twitter.com/grigore_trifan)
 
 ### Tech Stack
+* React
+* Moralis API
 
-**🚧WIP🚧**
+### Setup
+Clone the repo on your computer, install all the packages using `yarn install`, after that you'll provide the env keys for Moralis and Alchemy within `.env`
+
+**Example**
+
+```env
+VITE_MORALIS_KEY="APP_MORALIS_KEY"
+VITE_ALCHEMY_KEY="YOUR_ALCHEMY_KEY"
+```
 
 ### ETA: ~20 days
