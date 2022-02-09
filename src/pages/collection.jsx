@@ -1,15 +1,14 @@
-import { Avatar, Heading,Image,Wrap, WrapItem } from '@chakra-ui/react';
+import {  Heading,Wrap, WrapItem } from '@chakra-ui/react';
 import React, { useEffect,useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userAtom';
-import { useNft } from "use-nft"
 import NftCard from '../components/nftCard';
 const Collection = () => {
   const user = useRecoilValue(userState);
   const [nfts,setNfts] = useState([])
   
   const grabCollectibles = async () => {
-    const address = "0xad851ef1ad2ccf8f87413e6c274bccbec37469d2" //user.idToken.wallet_address
+    const address = user.idToken.wallet_address
     const fetchedCollectibles = await fetch(`https://deep-index.moralis.io/api/v2/${address}/nft?chain=eth&format=decimal&limit=12`,{headers:{'X-API-Key':import.meta.env.VITE_MORALIS_KEY}})
                 .then((res)=>res.json());
     setNfts(fetchedCollectibles.result);
