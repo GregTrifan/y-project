@@ -61,7 +61,7 @@ export default function Layout({children}) {
         </Drawer>
         <Box ml={{ base: 0, md: 60 }} transition=".3s ease" >
           <Flex
-            sx={{position: 'sticky', top: '0' }}
+            
             as="header"
             align="center"
             justify="space-between"
