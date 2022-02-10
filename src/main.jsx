@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import 'atropos/css';
+import "atropos/css";
 
 const colors = {
   brand: {
@@ -15,20 +15,20 @@ const colors = {
     600: "#1D985C",
     700: "#146940",
     800: "#0B3A23",
-    900: "#020B06"
-  }
+    900: "#020B06",
+  },
 };
 const config = {
   useSystemColorMode: false,
-  initialColorMode: 'light',
+  initialColorMode: "light",
 };
 
 const theme = extendTheme({ colors, config });
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-    <App />
+      <App />
     </ChakraProvider>
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
