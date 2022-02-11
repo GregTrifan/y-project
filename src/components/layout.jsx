@@ -27,9 +27,9 @@ import { userState } from "../atoms/userAtom";
 export default function Layout({ children }) {
   const sidebar = useDisclosure();
   const uauth = new UAuth({
-    clientID: "OaafgSxIJJOXN35/KfeAkGYEeHFvq3r4ngO1E05tGVg=",
-    clientSecret: "/EcHG6EihOPdoGVzCONtaQZyRyqaYIX3oANmgvMsoAA=",
-    redirectUri: "http://localhost:3000/callback",
+    clientID: import.meta.env.VITE_CLIENT_ID,
+    clientSecret: import.meta.env.VITE_CLIENT_SECRET,
+    redirectUri: import.meta.env.VITE_REDIRECT_URI,
   });
   const setUserState = useSetRecoilState(userState);
   const user = useRecoilValue(userState);

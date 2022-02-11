@@ -20,13 +20,16 @@ This project was created as a submission for [Integrating UNS “Login With Unst
 
 ### Setup
 
-Clone the repo on your computer, install all the packages using `yarn install`, after that you'll provide the env keys for Moralis and Alchemy within `.env`
+Clone the repo on your computer, install all the packages using `yarn install`, after that you'll provide the env keys for Unstoppable Domains, Moralis and Alchemy within `.env`
 
 **Example**
 
 ```env
 VITE_MORALIS_KEY="APP_MORALIS_KEY"
 VITE_ALCHEMY_KEY="YOUR_ALCHEMY_KEY"
+VITE_CLIENT_ID="YOUR_UD_CLIENT_ID"
+VITE_CLIENT_SECRET="YOUR_UD_CLIENT_SECRET"
+VITE_REDIRECT_URI="YOUR_UD_CLIENT_REDIRECT_URI"
 ```
 
 ### ETA: ~20 days
