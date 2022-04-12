@@ -11,7 +11,7 @@ This project was created as a submission for [Integrating UNS “Login With Unst
 
 - **Discord -** GЯEG#2127
 - **email -** trifangaby71@gmail.com
-- **Gitcoin -** [theslayer-666](https://gitcoin.co/profile/theslayer-666)
+- **Gitcoin -** [gregtrifan](https://gitcoin.co/profile/gregtrifan)
 - **Twitter -** [@grigore_trifan](https://twitter.com/grigore_trifan)
 
 ### Tech Stack
