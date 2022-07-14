@@ -2,7 +2,6 @@
 
 ## About
 A **Dead Simple** Ethereum Mainnet NFT and Asset dashboard 
-
 This project was created as a submission for [Integrating UNS “Login With Unstoppable”](https://gitcoin.co/issue/unstoppabledomains/gitcoin-bounties/4/100027487) bounty which is part of the [Schelling Point Virtual Hackaton](https://gitcoin.co/hackathon/schellingpoint)
 
 ## [Project Demo](https://youtu.be/XNY8FaUSwVI)
